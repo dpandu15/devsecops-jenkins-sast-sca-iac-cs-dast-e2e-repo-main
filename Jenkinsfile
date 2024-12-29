@@ -26,7 +26,7 @@ pipeline {
         withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
           script {
             try {
-              bat("C:\\Snyk\\snyk-win.exe  container test devsecops2306/testeb")
+              bat("G:\\DevSecOps\\Software\\snyk-win.exe  container test devsecops2306/testeb")
             } catch (err) {
               echo err.getMessage()
             }
@@ -43,7 +43,7 @@ pipeline {
     }
     stage('RunDASTUsingZAP') {
       steps {
-        bat("C:\\Zap\\ZAP_2.15.0\\zap.sh -port 9393 -cmd -quickurl https://www.example.com -quickprogress -quickout C:\\Zap\\ZAP_2.15.0\\Output.html")
+        bat("G:\\DevSecOps\\ZAPDemo\\ZAP_2.15.0_Crossplatform\\zap.sh -port 9393 -cmd -quickurl https://www.example.com -quickprogress -quickout G:\\DevSecOps\\ZAPDemo\\Zapoutput\\Output.html")
       }
     }
 
